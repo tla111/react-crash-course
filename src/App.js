@@ -1,9 +1,19 @@
 import { useEffect } from 'react';
 
+import MovieCard from './MovieCard';
+
 import './App.css'
+import SearchIcon from './search.svg';
 // const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=9b9f494f";
 const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
-// import SearchIcon from './search.svg';
+
+const movie1 = {
+  "Title": "Amazing Spiderman Syndrome",
+  "Year": "2012",
+  "imdbID": "tt2586634",
+  "Type": "movie",
+  "Poster": "N/A"
+}
 
 const App = () => {
 
@@ -19,8 +29,27 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-      <h1>App</h1>
+    <div className="app">
+      <h1>MovieLand</h1>
+
+      <div className="search">
+        <input
+          placeHolder="Search for movies"
+          value="Superman"
+          onChange={() => { }}
+        />
+        <image
+          src={SearchIcon}
+          alt="search"
+          onClick={() => { }}
+        />
+      </div>
+
+      <div className="container">
+        <MovieCard movie1={movie1} />
+      </div>
+
+
     </div>
   );
 }
